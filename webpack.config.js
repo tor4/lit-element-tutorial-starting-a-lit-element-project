@@ -66,7 +66,11 @@ module.exports = ({ mode, presets }) => {
             exclude: /node_modules/,
             loader: 'babel-loader',
             options: {
-              plugins: ['@babel/plugin-syntax-dynamic-import'],
+              plugins: [
+                '@babel/plugin-syntax-dynamic-import',
+                '@babel/plugin-proposal-class-properties',
+                ['@babel/plugin-proposal-decorators', {decoratorsBeforeExport: true}]
+              ],
               presets: [
                 [
                   '@babel/preset-env',
